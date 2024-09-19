@@ -57,6 +57,7 @@ if(isset($_SESSION["user"])) {
                 array_push($errors, "Password and Repeat Password must match");
             }
             require_once "connect.php";
+            // Mengecek apakah email sudah digunakan dalam database atau belum
             $sql = "SELECT * FROM users WHERE email = '$email'";
             $result = mysqli_query($conn, $sql);
             $rowCount = mysqli_num_rows($result);
